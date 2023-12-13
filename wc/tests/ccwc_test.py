@@ -1,6 +1,7 @@
 #how do you write a unit test case for the wordcount?
 import unittest
 from unittest.mock import patch
+
 from src import WordCount
 
 # class TestWordCount(unittest.TestCase):
@@ -19,5 +20,5 @@ from src import WordCount
 #         mock_line_count.assert_called_once_with("test.txt")
 
 wc = WordCount()
-wc.word_count("../test.txt")
-wc.byte_count("../test.txt")
+wc.word_count("test.txt")
+wc.byte_count("test.txt")

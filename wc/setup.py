@@ -1,5 +1,4 @@
-from setuptools import setup, find_packages
-
+from setuptools import find_packages, setup
 
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
@@ -7,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="ccwc",
-    version="0.1.4.0",
+    version="0.1.5.1",
     author="Mridul Pant",
     author_email="mridulpant2010@gmail.com",
     long_description=long_description,
@@ -23,7 +22,7 @@ setup(
     python_requires=">=3.6",
     entry_points={
         "console_scripts": [
-            "ccwc=src.ccwc:main",
+            "ccwc=codingchallenges.wc.src.main:main",
         ],
     },
 )

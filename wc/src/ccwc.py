@@ -1,5 +1,4 @@
 import typer
-from typing import Annotated
 
 
 class WordCount:
@@ -36,24 +35,44 @@ class WordCount:
 def main():
     wc = WordCount()
 
-    @wc.app.command("m")
-    def byte_count_cli(filename: Annotated[str, typer.Argument()] = None):
+    @wc.app.command(
+        "m",
+        rich_help_panel="ccwc --{option} <filename>",
+        help="Takes filename and outputs the number of words in a file.",
+    )
+    def byte_count_cli(
+        filename: str = typer.Argument(..., help="The name of the file")
+    ):
         wc.byte_count(filename)
 
-    @wc.app.command("c")
-    def character_count_cli(filename: Annotated[str, typer.Argument()] = None):
+    @wc.app.command(
+        "c",
+        rich_help_panel="ccwc --{option} <filename>",
+        help="Takes filename and outputs the number of characters in a file.",
+    )
+    def character_count_cli(
+        filename: str = typer.Argument(..., help="The name of the file")
+    ):
         wc.character_count(filename)
 
-    @wc.app.command("l")
-    def line_count_cli(filename: Annotated[str, typer.Argument()] = None):
+    @wc.app.command(
+        "l",
+        rich_help_panel="ccwc --{option} <filename>",
+        help="Takes filename and outputs the number of lines in a file.",
+    )
+    def line_count_cli(
+        filename: str = typer.Argument(..., help="The name of the file")
+    ):
         wc.line_count(filename)
 
-    @wc.app.command("w")
-    def word_count_cli(filename: Annotated[str, typer.Argument()] = None):
+    @wc.app.command(
+        "w",
+        rich_help_panel="ccwc --{option} <filename>",
+        help="Takes filename and outputs the number of words in a file.",
+    )
+    def word_count_cli(
+        filename: str = typer.Argument(..., help="The name of the file")
+    ):
         wc.word_count(filename)
-
-    wc.app()
-
-
-if __name__ == "__main__":
-    main()
+    
+    typer.run(wc.app())
