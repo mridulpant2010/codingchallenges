@@ -16,4 +16,9 @@
 
 ## building the project
     - command: python3 wc/setup.py sdist bdist_wheel  
-    - sudo pip3 install dist/wordcount-0.1.1-py3-none-any.whl  
+    - sudo pip3 install dist/wordcount-0.1.1-py3-none-any.whl 
+
+## pending
+  - unit test cases are not completed.
+  - ccwc utility isnot working expectedly.
+  - https://betterprogramming.pub/build-your-python-script-into-a-command-line-tool-f0817e7cebda

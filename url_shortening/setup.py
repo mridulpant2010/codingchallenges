@@ -5,25 +5,20 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 
 setup(
-    name="ccwc",
-    version="0.1.5.2",
+    name="url_shortener",
+    version="0.1.0",
     author="Mridul Pant",
     author_email="mridulpant2010@gmail.com",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/mridulpant/wordcount",
+    url="https://github.com/mridulpant/url_shortener",
     project_urls={
-        "Bug Tracker": "https://github.com/mridulpant/wordcount/issues",
+        "Bug Tracker": "https://github.com/mridulpant/url_shortener/issues",
     },
-    packages=find_packages(include=["wc", "wc.*"]),
-    install_requires=["typer"],
+    packages=find_packages(include=["url_shortening", "url_shortening.*"]),
+    install_requires=["flask"],
     setup_requires=["flake8"],
     tests_require=["pytest"],
     python_requires=">=3.6",
-    entry_points={
-        "console_scripts": [
-            "ccwc=codingchallenges.wc.src.main:main",
-        ],
-    },
 )
 
