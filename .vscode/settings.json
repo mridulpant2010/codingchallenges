@@ -1,14 +1,14 @@
 {
-    "pythonTestExplorer.testFramework": "unittest",
-    "python.analysis.autoFormatStrings": true,
-    "python.analysis.importFormat": "absolute",
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.typeCheckingMode": "basic",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-    },
-    "python.formatting.provider":"black",
-    "python.linting.pylintEnabled": true
+  "pythonTestExplorer.testFramework": "unittest",
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.importFormat": "absolute",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "python.formatting.provider": "black",
+  "python.linting.pylintEnabled": true
 }
