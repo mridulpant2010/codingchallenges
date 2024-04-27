@@ -6,7 +6,7 @@ current_dir = os.path.dirname(__file__)
 parent_dir= os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 print(parent_dir)
-from src.main import build_heap
+from src.main import build_heap, huffman_encoding
 
 
 def main():
@@ -27,8 +27,10 @@ def main():
     frequency_map = Counter(text_str)
     print(frequency_map.items())
     
-    result = build_heap(frequency_map)
-    print(result)
+    #result = build_heap(frequency_map)
+    #print(result)
+    encoded_text,root = huffman_encoding(text_str)
+    print(encoded_text)
     
 if __name__ == "__main__":
     main()
