@@ -1,36 +1,60 @@
 import os
 import sys
+import unittest
 from collections import Counter
 
 current_dir = os.path.dirname(__file__)
-parent_dir= os.path.dirname(current_dir)
+parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
-print(parent_dir)
-from src.main import build_heap, huffman_encoding
+#print(parent_dir)
+from src.main import (InternalNodes, LeafNodes, build_heap, encode,
+                      huffman_encoding)
 
 
-def main():
-    text_str = """
-    There has been perennial interest in personal qualities other than cognitive ability that determine success, including self-
-    control, grit, growth mind-set, and many others. Attempts to measure such qualities for the purposes of educational
-    policy and practice, however, are more recent. In this article, we identify serious challenges to doing so. We first address
-    confusion over terminology, including the descriptor noncognitive. We conclude that debate over the optimal name for
-    this broad category of personal qualities obscures substantial agreement about the specific attributes worth measuring.
-    Next, we discuss advantages and limitations of different measures. In particular, we compare self-report questionnaires,
-    teacher-report questionnaires, and performance tasks, using self-control as an illustrative case study to make the general
-    point that each approach is imperfect in its own way. Finally, we discuss how each measure’s imperfections can affect its
-    suitability for program evaluation, accountability, individual diagnosis, and practice improvement. For example, we do
-    not believe any available measure is suitable for between-school accountability judgments. In addition to urging caution
-    among policymakers and practitioners, we highlight medium-term innovations that may make measures of these personal
-    qualities more suitable for educational purposes
-    """
-    frequency_map = Counter(text_str)
-    print(frequency_map.items())
-    
-    #result = build_heap(frequency_map)
-    #print(result)
-    encoded_text,root = huffman_encoding(text_str)
-    print(encoded_text)
+#from src.models import InternalNodes, LeafNodes
+class TestCompression(unittest.TestCase):
+    text_str= """Hello World"""
+    def test_build_heap(self):
+        #test case 1: test build_heap with the empty frequency map.
+        frequency_map_empty ={}
+        root_empty =build_heap(frequency_map_empty)
+        self.assertIsNone(root_empty)
+        
+        # test case 2:
+        dict_mapping = Counter(self.text_str)
+        node = build_heap(dict_mapping)
+        self.assertEqual(type(node),InternalNodes)
+
+    def test_encode(self):
+        
+        #test case 1: test encode with a Leaf node.
+        leaf_nodes = LeafNodes('a',5)
+        codes = {}
+        encode(leaf_nodes,'',codes)
+        self.assertEqual(codes['a'],'')
+        
+        #test case 2: test encode with with an internal node.
+        left = LeafNodes('a',5)
+        right = LeafNodes('b',3)
+        codes = {}
+        encode(left,'0',codes)
+        encode(right,'1',codes)
+        self.assertEqual(codes['a'],'0')
+        self.assertEqual(codes['b'],'1')
+        
+    def test_huffman_encoding(self):
+        
+        #test case 1: test with an empty string
+        empty_string, empty_node = huffman_encoding('')
+        self.assertEqual(empty_string,'')
+        self.assertIsNone(empty_node)
+        
+        # dict_mapping = Counter(self.text_str)
+        # node:InternalNodes = build_heap(dict_mapping)
+        encoded_text,root = huffman_encoding(self.text_str)
+        self.assertEqual(type(encoded_text),str)
+        self.assertEqual(type(root),InternalNodes)
+        
     
 if __name__ == "__main__":
-    main()
+    unittest.main()

@@ -9,6 +9,7 @@ def read_file(file_path,file_name):
         data = f.readline()
         
 
+#TODO: for better structuring of the code it needs to be placed somewhere else. I think we can place 
 class InternalNodes:
     def __init__(self,weight,left,right) -> None:
         self.weight=weight
@@ -35,6 +36,7 @@ def build_heap(frequency_map:dict) -> None:
     Returns:
         InternalNodes: root Node of the heap.
     """
+    if len(frequency_map) == 0: return None
     he = []
     for k,v in frequency_map.items():
         heapq.heappush(he,LeafNodes(k,v))
@@ -73,6 +75,9 @@ def huffman_encoding(text):
         encoded_text: str
         build_node: Node
     """
+    if text =='':
+        return text,None
+    
     dict_mapping = Counter(text)
     build_node = build_heap(dict_mapping)
     codes = {}
@@ -86,5 +91,7 @@ def huffman_encoding(text):
 
 
 #what is the logic for this ?
+#decoding logic needs to be checked for this.
 def huffman_decoding(encoded_text,root):
+    #how to decode this is a challenge now?
     pass
