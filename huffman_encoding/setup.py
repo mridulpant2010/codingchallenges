@@ -13,7 +13,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/mridulpant2010/codingchallenges/tree/main/wc",
     project_urls={
-        "Bug Tracker": "https://github.com/mridulpant2010/codingchallenges/tree/main/wc", #TODO: correct this link.
+        "Bug Tracker": "https://github.com/mridulpant2010/codingchallenges/tree/main/wc",  # TODO: correct this link.
     },
     packages=find_packages(include=["url_shortening", "url_shortening.*"]),
     install_requires=["flask"],
