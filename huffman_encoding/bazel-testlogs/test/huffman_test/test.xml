@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite name="test/huffman_test.exe" tests="1" failures="0" errors="0">
+<testcase name="test/huffman_test.exe" status="run" duration="0" time="0"></testcase>
+<system-out><![CDATA[Executing tests from //test:huffman_test
+-----------------------------------------------------------------------------
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
+{' ': '000', 'd': '001', 'H': '010', 'W': '011', 'l': '10', 'o': '110', 'r': '1110', 'e': '1111'}
+{' ': '000', 'd': '001', 'H': '010', 'W': '011', 'l': '10', 'o': '110', 'r': '1110', 'e': '1111'}
+]]></system-out>
+</testsuite>
+</testsuites>

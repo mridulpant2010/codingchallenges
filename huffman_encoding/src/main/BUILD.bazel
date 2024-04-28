@@ -1,0 +1,16 @@
+#load("@python_deps//:requirements.bzl","requirement")
+
+load("@rules_python//python:defs.bzl","py_binary")
+py_library(
+    name="main",
+    srcs=["main.py"],
+    deps=["//src/models:models"],
+    visibility=["//visibility:public"]
+)
+py_binary(
+    name="main_binary",
+    srcs=["main.py"],
+    main="main.py",
+    deps=["//src/models:models"],
+    visibility=["//visibility:public"]
+)

@@ -1,23 +1,10 @@
-import os
-import sys
 import unittest
 from collections import Counter
 
-current_dir = os.path.dirname(__file__)
-parent_dir = os.path.dirname(current_dir)
-sys.path.append(parent_dir)
-# print(parent_dir)
-from src.main import (
-    InternalNodes,
-    LeafNodes,
-    build_heap,
-    encode,
-    huffman_decoding,
-    huffman_encoding,
-)
+from src.main.main import build_heap, encode, huffman_decoding, huffman_encoding
+from src.models.models import InternalNodes, LeafNodes
 
 
-# from src.models import InternalNodes, LeafNodes
 class TestCompression(unittest.TestCase):
     text_str = """Hello World"""
 

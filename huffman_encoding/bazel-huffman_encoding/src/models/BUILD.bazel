@@ -1,0 +1,5 @@
+py_library(
+    name="models",
+    visibility=["//visibility:public"],
+    srcs=["models.py"]
+)

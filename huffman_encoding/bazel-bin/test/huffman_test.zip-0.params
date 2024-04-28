@@ -1,0 +1,11 @@
+__main__.py=bazel-out/x64_windows-fastbuild/bin/test/huffman_test.temp
+__init__.py=
+runfiles/_main/__init__.py=
+runfiles/_main/src/__init__.py=
+runfiles/_main/src/main/__init__.py=
+runfiles/_main/test/__init__.py=
+runfiles/_main/src/models/__init__.py=
+runfiles/_main/src/models/models.py=src/models/models.py
+runfiles/_main/src/main/main.py=src/main/main.py
+runfiles/_main/test/test_main.py=test/test_main.py
+runfiles/_repo_mapping=bazel-out/x64_windows-fastbuild/bin/test/huffman_test.zip.repo_mapping

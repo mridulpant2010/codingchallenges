@@ -1,0 +1,6 @@
+py_test(
+    name="huffman_test",
+    srcs = ["test_main.py"],
+    main="test_main.py",
+    deps=["//src/main:main","//src/models:models"]
+)
