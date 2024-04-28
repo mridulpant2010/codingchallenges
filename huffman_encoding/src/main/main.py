@@ -11,7 +11,7 @@ def read_file():
     Returns:
         data: returns the data from the file in a specified format.
     """
-    data:str = pkgutil.get_data(__name__,"../third_party/compression.txt")
+    data:str = pkgutil.get_data('third_party',"../third_party/compression.txt")
     return data.decode()
 
 
