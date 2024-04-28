@@ -93,5 +93,24 @@ def huffman_encoding(text):
 #what is the logic for this ?
 #decoding logic needs to be checked for this.
 def huffman_decoding(encoded_text,root):
-    #how to decode this is a challenge now?
-    pass
+    """generates the encoded string to a 
+
+    Args:
+        encoded_text (str): encoded text generated from the 
+        root (InternalNode): root of the heap.
+
+    Returns:
+        decoded_text: returns the actual decoded string.
+    """
+    decoded_text = ""
+    current_node:InternalNodes=root
+    for bits in encoded_text:
+        if bits=='0':
+            current_node=current_node.left
+        else:
+            current_node=current_node.right
+            
+        if isinstance(current_node,LeafNodes):
+            decoded_text+=current_node.char
+            current_node=root
+    return decoded_text

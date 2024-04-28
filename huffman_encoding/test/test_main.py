@@ -8,7 +8,7 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 #print(parent_dir)
 from src.main import (InternalNodes, LeafNodes, build_heap, encode,
-                      huffman_encoding)
+                      huffman_decoding, huffman_encoding)
 
 
 #from src.models import InternalNodes, LeafNodes
@@ -54,7 +54,19 @@ class TestCompression(unittest.TestCase):
         encoded_text,root = huffman_encoding(self.text_str)
         self.assertEqual(type(encoded_text),str)
         self.assertEqual(type(root),InternalNodes)
-        
+    
+    def test_huffman_decoding(self):
+        #decide how many test cases can be formed.
+        #case1: when the encoded text is '' and root is None.
+        encoded_text=''
+        root= None
+        decoded_text=huffman_decoding(encoded_text,root)
+        self.assertEqual(decoded_text,'')
+
+        #case2: when the encoded text is not and root exists.
+        encoded_text,root = huffman_encoding(self.text_str)
+        decoded_text = huffman_decoding(encoded_text,root)
+        self.assertEqual(decoded_text,self.text_str)
     
 if __name__ == "__main__":
     unittest.main()
