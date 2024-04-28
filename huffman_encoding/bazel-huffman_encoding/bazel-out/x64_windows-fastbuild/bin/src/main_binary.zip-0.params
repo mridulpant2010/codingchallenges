@@ -1,8 +1,0 @@
-__main__.py=bazel-out/x64_windows-fastbuild/bin/src/main_binary.temp
-__init__.py=
-runfiles/_main/__init__.py=
-runfiles/_main/src/__init__.py=
-runfiles/_main/src/models/__init__.py=
-runfiles/_main/src/models/models.py=src/models/models.py
-runfiles/_main/src/main.py=src/main.py
-runfiles/_repo_mapping=bazel-out/x64_windows-fastbuild/bin/src/main_binary.zip.repo_mapping
