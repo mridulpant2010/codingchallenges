@@ -1,3 +1,18 @@
+
+# Bazel build directories
+bazel-out/
+bazel-bin/
+bazel-genfiles/
+bazel-testlogs/
+bazel-*
+
+# Bazel symlinks
+/bazel-*
+
+# Bazel workspace (only if workspace root is a subdirectory)
+/bazel-workspace
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
