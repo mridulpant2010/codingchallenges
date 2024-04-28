@@ -1,14 +1,18 @@
 import heapq
+import pkgutil
 from collections import Counter
 
 from src.models.models import InternalNodes, LeafNodes
 
 
-# how to correct the import issue.
-def read_file(file_path, file_name):
-    # TODO: need to make it parameterized such that it picks the correct.
-    with open(file_path, "r") as f:
-        data = f.readline()
+def read_file():
+    """reads a file, from the directory and returns the result.
+
+    Returns:
+        data: returns the data from the file in a specified format.
+    """
+    data:str = pkgutil.get_data(__name__,"../third_party/compression.txt")
+    return data.decode()
 
 
 def build_heap(frequency_map: dict) -> None:
@@ -106,6 +110,7 @@ def huffman_decoding(encoded_text, root):
 
 def main():
     text_str = "Hello world"
+    #text_str = read_file()
     encoded_text, root = huffman_encoding(text_str)
     decoded_text = huffman_decoding(encoded_text, root)
     print(decoded_text, text_str)

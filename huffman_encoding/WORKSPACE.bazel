@@ -7,6 +7,7 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_python/archive/refs/tags/0.12.0.tar.gz",
 )
 
+
 # load("@rules_python//python:pip.bzl", "pip_install")
 
 # pip_install(

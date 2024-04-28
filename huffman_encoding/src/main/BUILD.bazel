@@ -12,5 +12,6 @@ py_binary(
     srcs=["main.py"],
     main="main.py",
     deps=["//src/models:models"],
+    data=["//third_party:compression"],
     visibility=["//visibility:public"]
 )
