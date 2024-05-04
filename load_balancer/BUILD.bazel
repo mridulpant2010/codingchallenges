@@ -1,0 +1,6 @@
+# BUILD.bazel
+# genrule(
+#     name = "run_python_server",
+#     outs=["output.txt"],
+#     cmd = "python3 -m http.server 8080 --directory src/server1",
+# )
